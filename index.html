@@ -162,18 +162,143 @@
             <h3 class="text-xl font-semibold">Per Seat</h3>
           </div>
         </div>
-        <div class="w-[ 1170px] h-[1056px] bg-white mt-7 rounded-xl flex p-8">
-          <div class="flex"> 
-              <h1> Select Your Seat</h1>
-              <hr>
-              <div> 
+        <!-- TICKET SECTION -->
+        <div class="w-[ 1170px] h-[1056px] bg-white mt-7 rounded-xl flex p-8 gap-x-8">
+          <div class="flex flex-col w-[670px] gap-4"> 
+              <h1 class="text-2xl font-bold text-left"> Select Your Seat</h1>
+              <hr class="border-dotted">
+              <div class="flex "> 
                 <img src="images/seat-gray.png">
-                <p1>Available</p1>
+                <p1 class="text-lg font-semibold ml-2 mr-[450px]">Available</p1>
                 <img src="images/seat-green-filled.png">
+                <p1 class="text-lg font-semibold ml-2 text-[#1DD100]">Selected</p1>
+              </div>
+              <hr class="border-dotted">
+              <div class="w-[110px] h-[80px] rounded-xl bg-[#0307121A] flex items-center justify-center ml-[560px] mt-6">
+                <img src="images/tabler-icon-steering-wheel.png">
+              </div>
+              <div class="h-full">
+                <div class="grid grid-cols-5 gap-4 h-full w-full">
+                  <div class="w-[121.2px] h-[48px] text-sm font-semibold flex items-center justify-center">A</div>
+                  <div class="btn bg-[#0307121A] ">A1</div>
+                  <div class="btn bg-[#0307121A]">A2</div>
+                  <div class="btn bg-[#0307121A]">A3</div>
+                  <div class="btn bg-[#0307121A]">A4</div>
+
+                  <div class="w-[121.2px] h-[48px] text-sm font-semibold flex items-center justify-center">B</div>
+                  <div class="btn bg-[#0307121A]">B1</div>
+                  <div class="btn bg-[#0307121A]">B2</div>
+                  <div class="btn bg-[#0307121A]">B3</div>
+                  <div class="btn bg-[#0307121A]">B4</div>
+
+                  <div class="w-[121.2px] h-[48px] text-sm font-semibold flex items-center justify-center">C</div>
+                  <div class="btn bg-[#0307121A]">C1</div>
+                  <div class="btn bg-[#0307121A]">C2</div>
+                  <div class="btn bg-[#0307121A]">C3</div>
+                  <div class="btn bg-[#0307121A]">C4</div>
+
+                  <div class="w-[121.2px] h-[48px] text-sm font-semibold flex items-center justify-center">D</div>
+                  <div class="btn bg-[#0307121A]">D1</div>
+                  <div class="btn bg-[#0307121A]">D2</div>
+                  <div class="btn bg-[#0307121A]">D3</div>
+                  <div class="btn bg-[#0307121A]">D4</div>
+
+                  <div class="w-[121.2px] h-[48px] text-sm font-semibold flex items-center justify-center">E</div>
+                  <div class="btn bg-[#0307121A]">E1</div>
+                  <div class="btn bg-[#0307121A]">E2</div>
+                  <div class="btn bg-[#0307121A]">E3</div>
+                  <div class="btn bg-[#0307121A]">E4</div>
+
+                  <div class="w-[121.2px] h-[48px] text-sm font-semibold flex items-center justify-center">F</div>
+                  <div class="btn bg-[#0307121A]">F1</div>
+                  <div class="btn bg-[#0307121A]">F2</div>
+                  <div class="btn bg-[#0307121A]">F3</div>
+                  <div class="btn bg-[#0307121A]">F4</div>
+
+                  <div class="w-[121.2px] h-[48px] text-sm font-semibold flex items-center justify-center">G</div>
+                  <div class="btn bg-[#0307121A]">G1</div>
+                  <div class="btn bg-[#0307121A]">G2</div>
+                  <div class="btn bg-[#0307121A]">G3</div>
+                  <div class="btn bg-[#0307121A]">G4</div>
+
+                  <div class="w-[121.2px] h-[48px] text-sm font-semibold flex items-center justify-center">H</div>
+                  <div class="btn bg-[#0307121A]">H1</div>
+                  <div class="btn bg-[#0307121A]">H2</div>
+                  <div class="btn bg-[#0307121A]">H3</div>
+                  <div class="btn bg-[#0307121A]">H4</div>
+
+                  <div class="w-[121.2px] h-[48px] text-sm font-semibold flex items-center justify-center">I</div>
+                  <div class="btn bg-[#0307121A]">I1</div>
+                  <div class="btn bg-[#0307121A]">I2</div>
+                  <div class="btn bg-[#0307121A]">I3</div>
+                  <div class="btn bg-[#0307121A]">I4</div>
+
+                  <div class="w-[121.2px] h-[48px] text-sm font-semibold flex items-center justify-center">J</div>
+                  <div class="btn bg-[#0307121A]">J1</div>
+                  <div class="btn bg-[#0307121A]">J2</div>
+                  <div class="btn bg-[#0307121A]">J3</div>
+                  <div class="btn bg-[#0307121A]">J4</div>
               </div>
           </div>
-
-
+        </div>
+        <div class="w-[400px] h-auto flex flex-col gap-4">
+          <h1 class="text-2xl font-bold text-left">Select Your Seat</h1>
+          <hr class="border-dotted">
+          <div class="bg-[#F7F8F8] flex flex-col gap-4 rounded-xl">
+          <div class="overflow-x-auto">
+            <table class="table">
+              <!-- head -->
+              <thead>
+                <tr>
+                  <th class="text-sm font-semibold flex">Seat <span class="w-6 h-6 bg-[#1DD100] text-white rounded-lg text-center ml-1">2</span> </th>
+                  <th class="text-sm font-semibold">Class</th>
+                  <th class="text-sm font-semibold">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- row 1 -->
+                <tr>
+                  
+                  <td>C2</td>
+                  <td>Economy</td>
+                  <td>550</td>
+                </tr>
+                <!-- row 2 -->
+                <tr>
+                  
+                  <td>C2</td>
+                  <td>Economy</td>
+                  <td>550</td>
+                </tr>
+                
+              </tbody>
+            </table>
+            
+          </div>
+          <hr> 
+            <div class="flex justify-between px-4">
+              <h3 class="text-sm font-bold">Total Price</h3>
+              <h3 class="text-sm font-bold mr-3">BDT 1100</h3>
+            </div>
+            <div>
+              <label class="input flex items-center gap-2 h-[56px] w-[370px] ml-3">
+                <input type="text" class="grow" placeholder="Have Any Coupon?" />
+                <span class="btn bg-[#1DD100] text-white">Apply</span>
+              </label>
+            </div>
+            <div class="flex justify-between px-4 mb-4">
+              <h3 class="text-sm font-bold">Grand Total</h3>
+              <h3 class="text-sm font-bold mr-3">BDT 1100</h3>
+            </div>
+          </div>
+            <div>
+              <label class="form-control w-full max-w-xs">
+                <div class="label">
+                  <span class="label-text text-lg font-semibold">What is your name?</span>
+                </div>
+                <input type="text" placeholder="Enter Your Name" class="input input-bordered w-full max-w-xs" />
+              </label>
+            </div>
         </div>
 
         </div>
