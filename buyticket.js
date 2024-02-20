@@ -1,63 +1,65 @@
-// Wait for the DOM content to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-  // Get a reference to the Buy Tickets button
-  const buyTicketsButton = document.getElementById('buyTickets');
+let seatList = [];
 
-  // Get a reference to the Ticket Section
-  const ticketSection = document.getElementById('ticketSection');
+function handleSeatClick(seatId) {
+    const seatArray = document.getElementById(seatId);
+    const index = seatList.indexOf(seatId);
 
-  // Add a click event listener to the Buy Tickets button
-  buyTicketsButton.addEventListener('click', function() {
-      // Scroll the page to the Ticket Section
-      ticketSection.scrollIntoView({ behavior: 'smooth' });
-  });
-});
+    if (index === -1 && seatList.length < 3 ) {
+        // Add the seat to the list if it's not already selected and less than 4 seats are selected
+        seatList.push(seatId);
+        seatArray.style.backgroundColor = 'green';
+        countSeat();
+    } else {
+        // Toggle the seat: Remove it if it's already selected, add it if it's not selected 
+        const disableSeat = document.querySelectorAll('.grid-cols-5 button');
+        disableSeat.forEach(function disable(removeseat){
+          removeseat.disabled= true;
+        })
 
-
-//Button Click Color Change// 
-const buttons = document.querySelectorAll('.btn');
-
-
-buttons.forEach(button => {
-    button.dataset.initialColor = button.style.backgroundColor; 
-});
-
-buttons.forEach(button => {
-
-    button.addEventListener('click', () => {
-        const currentColor = button.style.backgroundColor;
-        const initialColor = button.dataset.initialColor;
-
-        if (currentColor === initialColor) {
-            button.style.backgroundColor = '#1DD100';
+        if (index !== -1 ) {
+            seatList.splice(index, 1);
+            seatArray.style.backgroundColor = ''; // Remove the background color
+            countSeat();
         } else {
-            button.style.backgroundColor = initialColor;
+            seatList.push(seatId);
+            seatArray.style.backgroundColor = 'green';
+            countSeat();
         }
+    }
+}
+
+
+function countSeat() {
+    const seatNumber = document.getElementById('decrementNumber');
+    const seatIncrementNumber = document.getElementById('incrementSeat');
+    seatNumber.textContent = 40 - seatList.length;
+    seatIncrementNumber.textContent = seatList.length;
+}
+
+
+
+//Click on button to load the ticket section//
+document.addEventListener('DOMContentLoaded', function() {
+   //calling the button//
+    const buyTicketsButton = document.getElementById('buyTickets');
+    const busButton = document.getElementById('busButton');
+  //reffering to the section//
+    const ticketSection = document.getElementById('ticketSection');
+  
+    //adding the event on click//
+    buyTicketsButton.addEventListener('click', function() {
+      ticketSection.scrollIntoView({ behavior: 'smooth' });
     });
-});
+  
+    //adding the event on click//
+    busButton.addEventListener('click', function() {
+      ticketSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+  
 
-document.addEventListener('DOMContentLoaded', function () {
-  const seatDecrement = document.getElementById('seatDecrement');
-  const seatButtons = document.querySelectorAll('.btn.bg-[#0307121A]');
-
-  let remainingSeats = 40;
-
-  function updateSeatCount() {
-      seatDecrement.textContent = remainingSeats + ' Seats Left';
-  }
-
-  seatButtons.forEach(function (button) {
-      button.addEventListener('click', function () {
-          if (button.classList.contains('selected')) {
-              button.classList.remove('selected');
-              remainingSeats++;
-          } else {
-              button.classList.add('selected');
-              remainingSeats--;
-          }
-          updateSeatCount();
-      });
+  const seatButtons = document.querySelectorAll('.grid-cols-5 button');
+  seatButtons.forEach(button => {
+      button.addEventListener('click', () => handleSeatClick(button.id));
   });
 
-  updateSeatCount();
-});
